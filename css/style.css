@@ -1,0 +1,304 @@
+/* Import a modern Google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --blue: #1565c0;
+    --red: #b71c1c;
+  }
+
+
+/* Apply the font to the entire website */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*background-color: #f4f4f9;*/
+    background-color: rgba( var(--blue), 0.3);
+    color: #333;
+}
+
+/* Default Theme (Blue) */
+body.blue {
+    background-color: #e3f2fd; 
+    color:  var(--blue);
+}
+
+body.blue .navbar {
+    background-color: var(--blue); 
+}
+
+body.blue th {
+    background-color: var(--blue);  
+}
+
+body.blue .pagination a.active {
+    background-color: var(--blue);
+    color: white;
+}
+
+/* Red Theme */
+body.red {
+    background-color: rgba( var(--red), 0.3);
+    color: var(--red);
+}
+
+body.red .navbar {
+    background-color: var(--red);
+}
+
+body.red th {
+    background-color: var(--red);
+}
+
+
+
+body.red .pagination a.active {
+    background-color: var(--red);
+    color: white;
+}
+
+/* Navbar styling */
+.navbar {
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #f0f0f0; 
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.navbar .theme-switcher a {
+    margin-left: auto;
+}
+
+/* Container layout */
+.container {
+    max-width: 90vw;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+
+.container-sm {
+    max-width: 500px;
+}
+
+/* Page title styling */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn.edit {
+    background-color: var(--blue);
+}
+
+.btn.edit:hover {
+    filter: brightness(85%);
+}
+
+.btn.delete {
+    background-color: var(--red);
+}
+
+.btn.delete:hover {
+    filter: brightness(85%);
+}
+
+button[type="submit"] {
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addBtn {
+  background-color: #198754;
+  margin-bottom: 1.5rem;  
+}
+
+/* Form input styles */
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.error-message {
+    color: red;
+    font-size: small    ;
+}
+
+.error-input {
+    border: 2px solid red !important; 
+}
+
+.time-inputs {
+    display: flex;
+    gap: 10px; /* Adds space between the inputs */
+}
+
+.time-inputs input[type="number"] {
+    flex: 1; /* Ensures both inputs take equal width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    color: white;  /* White text for table headers */
+    text-transform: uppercase;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 0 5px;
+    border-radius: 5px;
+    border: 1px solid;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+    color: var(--blue);
+}
+
+/* Snackbar styling */
+#snackbar {
+    display: none; /* Hidden by default */
+    min-width: 250px; /* Minimum width */
+    margin-left: -125px; /* Center the snackbar */
+    background-color: #4CAF50; /* Green background for success */
+    color: white; /* White text */
+    text-align: center; /* Centered text */
+    border-radius: 5px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Fixed at the bottom */
+    z-index: 1; /* Show on top */
+    left: 50%; /* Center horizontally */
+    bottom: 30px; /* 30px from the bottom */
+    font-size: 17px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Show the snackbar when adding the "show" class */
+#snackbar.show {
+    display: flex; /* Show the snackbar */
+}
+
+/* Responsive design for mobile and tablet view */
+@media (max-width: 1062px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+        word-wrap: break-word; /* Break long words in the table cells */
+    }
+
+        
+    a[name="editBtn"]{
+        margin-bottom: 5px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        margin-bottom: 10px;
+    }
+}
+
+/* Additional styles for inputs on smaller screens */
+@media (max-width: 576px) {
+    input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="date"] {
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 16px;
+    }
+}
